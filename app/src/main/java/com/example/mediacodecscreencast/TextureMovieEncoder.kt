@@ -18,7 +18,7 @@ class TextureMovieEncoder(private val context: Context) {
     var callback: Callback? = null
 
     fun start(outFile: File) {
-        val videoEncoder = HWVideoEncoderCore(context, 256, 256, 256 * 256, outFile)
+        val videoEncoder = VideoEncoderCore(context, outFile)
 
         val eglContext = EGL14.eglGetCurrentContext()
         val eglCore = EglCore(eglContext, EglCore.FLAG_RECORDABLE)
